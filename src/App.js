@@ -26,6 +26,11 @@ function App() {
     "Romcom about two developers over Zoom",
     "Horror film where AWS goes down for 24 hours"
   ]);
+
+  const addIdeas = (newIdeas) => {
+    setIdeas([...ideas, newIdeas])
+  }
+
   return (
     <div className="App">
       <main>
@@ -36,6 +41,7 @@ function App() {
         <h1>Submit your ideas down below:</h1>
 
         <DisplayIdeas ideas={ideas} />
+        <h1>Submit your ideas down below</h1>
         <IdeasForm />
 
       </main>
