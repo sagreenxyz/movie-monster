@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 function DisplayIdeas(props) {
   let crazyIdeas = props.ideas.map(idea => <li>{idea}</li>)
-  console.log(crazyIdeas)
   return (
     <div>
       <ul>
@@ -18,6 +17,11 @@ function App() {
     "Romcom about two developers over Zoom",
     "Horror film where AWS goes down for 24 hours"
   ])
+
+  const addIdeas = (newIdeas) => {
+    setIdeas([...ideas, newIdeas])
+  }
+
   return (
     <main>
       <h1>Welcome, Super Awesome Movie Monster Think Tank!</h1>
