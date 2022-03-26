@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import './App.css';
+import { useState } from 'react'
 
 function DisplayIdeas(props) {
   let crazyIdeas = props.ideas.map(idea => <li>{idea}</li>)
@@ -12,18 +11,19 @@ function DisplayIdeas(props) {
   )
 }
 
-function IdeasForm() {
+function IdeasForm(props) {
   let [input, setInput] = useState('')
 
-  const handleSubmit = () => {
-    console.log('IdeasForm handleSubmit()')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.addIdeas(input)
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => e.preventDefault()} />
-        <button>Submit your Idea!</button>
+        <input type="text" onChange={(e) => setInput(e.target.value)} />
+        <button type="submit">Submit your Idea!</button>
       </form>
     </div>
   )
@@ -34,28 +34,20 @@ function App() {
     "Movie about a guy who gets bit by a radioactive mole rat",
     "Romcom about two developers over Zoom",
     "Horror film where AWS goes down for 24 hours"
-  ]);
+  ])
 
   const addIdeas = (newIdeas) => {
     setIdeas([...ideas, newIdeas])
   }
 
   return (
-    <div className="App">
-      <main>
-        <h1>Welcome, Super Awesome Movie Monster Think Tank!</h1>
-
-        <br />
-
-        <h1>Submit your ideas down below:</h1>
-
-        <DisplayIdeas ideas={ideas} />
-        <h1>Submit your ideas down below</h1>
-        <IdeasForm />
-
-      </main>
-    </div>
-  );
+    <main>
+      <h1>Welcome, Super Awesome Movie Monster Think Tank!</h1>
+      <DisplayIdeas ideas={ideas} />
+      <h1>Submit your ideas down below</h1>
+      <IdeasForm addIdeas={addIdeas} />
+    </main>
+  )
 }
 
 export default App;
