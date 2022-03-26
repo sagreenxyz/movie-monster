@@ -5,7 +5,9 @@ function DisplayIdeas(props) {
   console.log(crazyIdeas)
   return (
     <div>
-      {props.ideas}
+      <ul>
+        {crazyIdeas}
+      </ul>
     </div>
   )
 }
