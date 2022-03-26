@@ -1,20 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
 
 function DisplayIdeas(props) {
   return (
     <div>
-      DisplayIdeas
+      {props.ideas}
     </div>
   )
 }
 
 function App() {
+  const [ideas, setIdeas] = useState([
+    "Movie about a guy who gets bit by a radioactive mole rat",
+    "Romcom about two developers over Zoom",
+    "Horror film where AWS goes down for 24 hours"
+  ])
   return (
-    <div className="App">
-      <DisplayIdeas />
-    </div>
-  );
+    <main>
+      <h1>Welcome, Super Awesome Movie Monster Think Tank!</h1>
+      <DisplayIdeas ideas={ideas} />
+    </main>
+  )
 }
 
 export default App;
