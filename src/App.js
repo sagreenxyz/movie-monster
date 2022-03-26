@@ -12,10 +12,10 @@ function DisplayIdeas(props) {
   )
 }
 
-function Form() {
+function IdeasForm() {
   return (
     <div>
-      Form Component
+      IdeasForm Component
     </div>
   )
 }
@@ -36,7 +36,7 @@ function App() {
         <h1>Submit your ideas down below:</h1>
 
         <DisplayIdeas ideas={ideas} />
-        <Form />
+        <IdeasForm />
 
       </main>
     </div>
