@@ -34,7 +34,8 @@ function App() {
     <main>
       <h1>Welcome, Super Awesome Movie Monster Think Tank!</h1>
       <DisplayIdeas ideas={ideas} />
-      <IdeasForm />
+      <h1>Submit your ideas down below</h1>
+      <IdeasForm addIdeas={addIdeas} />
     </main>
   )
 }
