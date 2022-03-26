@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import './App.css';
 
 function DisplayIdeas(props) {
+  let crazyIdeas = props.ideas.map(idea => <li>{idea}</li>)
   return (
     <div>
-      {props.ideas[0]}
+      <ul>
+        {crazyIdeas}
+      </ul>
     </div>
   )
 }
