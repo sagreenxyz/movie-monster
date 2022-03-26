@@ -4,7 +4,7 @@ import './App.css';
 function DisplayIdeas(props) {
   return (
     <div>
-      DisplayIdeas Component
+      {props.ideas[0]}
     </div>
   )
 }
@@ -32,7 +32,7 @@ function App() {
 
         <h1>Submit your ideas down below:</h1>
 
-        <DisplayIdeas />
+        <DisplayIdeas ideas={ideas} />
         <Form />
 
       </main>
