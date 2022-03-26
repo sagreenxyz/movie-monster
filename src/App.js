@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 function DisplayIdeas(props) {
+  let crazyIdeas = props.ideas.map(idea => <li>{idea}</li>)
+  console.log(crazyIdeas)
   return (
     <div>
       {props.ideas}
