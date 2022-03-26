@@ -13,9 +13,18 @@ function DisplayIdeas(props) {
 }
 
 function IdeasForm() {
+  let [input, setInput] = useState('')
+
+  const handleSubmit = () => {
+    console.log('IdeasForm handleSubmit()')
+  }
+
   return (
     <div>
-      IdeasForm Component
+      <form onSubmit={handleSubmit}>
+        <input type="text" onChange={(e) => e.preventDefault()} />
+        <button>Submit your Idea!</button>
+      </form>
     </div>
   )
 }
